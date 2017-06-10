@@ -1,0 +1,23 @@
+{
+  "name": "minhacidade",
+  "authors": [
+    "Josue <josuepaiva@lavid.ufpb.br>"
+  ],
+  "description": "A aplicação visa acompanhar gastos publicos em relação a areas básicas dos municipios",
+  "main": "main.js",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "1.6.4",
+   	"angular": "1.6.4",
+   	"bootstrap": "^3.0"
+	}
+}
