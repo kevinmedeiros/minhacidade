@@ -6,11 +6,14 @@
 
 var app = angular.module("minhacidade", ['ngRoute', 'chart.js']);
 
-    app.config(function($routeProvider) {
-        $routeProvider
+app.config(function($routeProvider) {
+    $routeProvider
         .when("/", {
-            templateUrl : "../partials/index.html",
-            controller: "graficoController"
+            templateUrl : "../partials/index.html"
+        })
+        .when("/saude", {
+            templateUrl : "../partials/saude.html",
+            controller: "saudeController"
         });
     });
 

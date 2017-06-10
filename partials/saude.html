@@ -1,0 +1,41 @@
+<div class="container">
+<canvas id="line" style="height: 50%" class="chart chart-line" chart-data="data"
+  chart-labels="labels" chart-series="series" chart-options="options"
+  chart-dataset-override="datasetOverride" chart-click="onClick">
+</canvas
+  <div>
+    <h4>Você sabia?</h4>
+    <p>Com investimento gasto na sua cidade na saúde é possível fazer</p>
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow full-width">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">O que</th>
+        <th>Preço em média (R$)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="invest in investimentosPossiveis">
+        <td class="mdl-data-table__cell--non-numeric">{{invest.descricao}}</td>
+        <td>{{invest.valor}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h4>Com o que foi gasto?</h4>
+  <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow full-width">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Nome da despesa</th>
+        <th>Valor Gasto (R$)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="gasto in comoFoiGasto">
+        <td class="mdl-data-table__cell--non-numeric">{{gasto.descricao}}</td>
+        <td>{{gasto.valor}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div> 
+</div>
+
