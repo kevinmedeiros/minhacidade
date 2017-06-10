@@ -4,12 +4,13 @@
 
 // main.js
 
-var app = angular.module("minhacidade", ["ngRoute"]);
+var app = angular.module("minhacidade", ['ngRoute', 'chart.js']);
 
     app.config(function($routeProvider) {
         $routeProvider
         .when("/", {
-            templateUrl : "../partials/index.html"
+            templateUrl : "../partials/index.html",
+            controller: "graficoController"
         });
     });
 

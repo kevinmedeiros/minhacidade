@@ -2,3 +2,9 @@
  	margin: 0;
  	padding: 0;
  }
+
+
+ .color-footer, .navbar-inverse {
+ 	background-color: #e7e7e7 !important;
+ 	border-color: #e7e7e7 !important;
+ }
