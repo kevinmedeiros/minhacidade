@@ -17,4 +17,4 @@
     municípios em áreas essenciais como: Saúde, Educação, Segurança, Esporte, Cultura e outras. Proporciona uma melhor visualização 
     dos dados financeiros, de forma interativa e de fácil compreensão, relacionados com cada uma dessas áreas essenciais. Este 
     fator é proporcionado por funcionalidades e dentre elas se descata uma chamada Gastômetro, que é capaz de informar uma previsão 
-    em tempo real dos gastos que estão sendo realizados. Além disso, traz também curiosidades e comparações dos dados obtidos
+    em tempo real dos gastos que estão sendo realizados. Além disso, traz também curiosidades e comparações dos dados obtidos.
