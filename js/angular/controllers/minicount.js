@@ -11,17 +11,27 @@
 	  function minicountController($scope, saudeService){
 
 
-
+	  	$scope.saude = "R$ 2002154";
+	  	$scope.educacao = "R$ 100154";
+	  	$scope.esporte = "R$ 12154";
 	  	console.log("controller iniciado");
 
 	  	saudeService.getGastosSaude().then(function(response){
 	  		console.log("Resposta api "+ JSON.stringify(response));
+
+	  		//$scope.gastos = response;
 	  	});
 
 	  	$scope.gastos = [];
-	 	$scope.gastos.push({"area": "Saúde"});
-	 	$scope.gastos.push({"area": "Educação"});
-	 	$scope.gastos.push({"area": "Esporte"});
+	 	$scope.gastos.push({"area": "Saúde",
+	 						"gasto": "R$ 2901932"
+	 	});
+	 	$scope.gastos.push({"area": "Educação",
+	 						"gasto": "R$ 12901932"
+	 	});
+	 	$scope.gastos.push({"area": "Esporte",
+	 						"gasto": "R$ 21932"
+	 });
 	 	//	var countDownDate = new Date("Jan 5, 2018 15:37:25").getTime();
 
 		// // Update the count down every 1 second
