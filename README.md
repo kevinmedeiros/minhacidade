@@ -59,6 +59,8 @@
 
 repositorio do backend https://github.com/minha-cidade/backend/
 
+repositorio da aplicação Mobile: https://github.com/alvesmarcos/minha-cidade
+
 # Back-end Minha Cidade em Golang
 O back-end tem a função de expor a API que será usada pelo front-end web e
 mobile do projeto Minha Cidade, desenvolvido na HackFest 2017. Usa como base
