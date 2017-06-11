@@ -12,5 +12,9 @@
        Marcos Henrique Alves da Silva 
        Victor Franco Vieira Lima
        
-
-       
+### Descrição:
+  	A plataforma Minha Cidade possui versões Web e Mobile, que trazem a solução para o problema de visualização de gastos dos 
+    municípios em áreas essenciais como: Saúde, Educação, Segurança, Esporte, Cultura e outras. Proporciona uma melhor visualização 
+    dos dados financeiros, de forma interativa e de fácil compreensão, relacionados com cada uma dessas áreas essenciais. Este 
+    fator é proporcionado por funcionalidades e dentre elas se descata uma chamada Gastômetro, que é capaz de informar uma previsão 
+    em tempo real dos gastos que estão sendo realizados. Além disso, traz também curiosidades e comparações dos dados obtidos
