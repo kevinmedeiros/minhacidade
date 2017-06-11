@@ -1,3 +1,103 @@
-<div class="container">
-	<h1>Home Page</h1>
+
+<div class="mdl-layout">
+
+	<center>
+		<div class="count-group">
+	<div class="count">
+		<span class="valor">{{myHeader}}</span>
+	</div>
+	<!--http://51.15.137.60:8080/api-->
+	<div class="count">
+		<span class="valor">2</span>
+	</div>
+
+	<div class="divisor">
+		<span class="tag">:</span>
+	</div>
+
+	<div class="count">
+		<span class="valor">1</span>
+	</div>
+
+	<div class="count">
+		<span class="valor">2</span>
+	</div>
+
+	<div class="count">
+		<span class="valor">1</span>
+	</div>
+
+	<div class="divisor">
+		<span class="tag">:</span>
+	</div>
+
+	<div class="count">
+		<span class="valor">2</span>
+	</div>
+
+	<div class="count">
+		<span class="valor">4</span>
+	</div>
+
+	<div class="count">
+		<span class="valor">2</span>
+	</div>
+
+	<div class="divisor">
+		<span class="tag">:</span>
+	</div>
+
+	<div class="count">
+		<span class="valor">2</span>
+	</div>
+
+	<div class="count">
+		<span class="valor">4</span>
+	</div>
+
+	<div class="count">
+		<span class="valor">2</span>
+	</div>
+	</center>
+	
+	
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<canvas widht="200px" height="50px" style="margin-bottom: 10px" id="doughnut" class="chart chart-doughnut"
+  chart-data="data" chart-labels="labels">
+</canvas>
+
+<div class="mdl-layout">
+	<div ng-controller="minicountController" class="mdl-layout__content">
+	    		
+	<div ng-repeat="x in gastos" style="margin-top: 10px; margin-bottom: 10px">
+		<div  id="content-geral" class="demo-card-wide mdl-card mdl-shadow--2dp">
+		<div id="background" class="mdl-grid {{x.area | colorDiv}}">
+			<div class="mdl-cell mdl-cell--4-col">
+				 <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-white-400 material-icons icon-card" role="presentation">{{x.area | colorArea}}</i></a>
+			</div>
+				<div class="mdl-cell mdl-cell--8-col">
+					<div ng-include="'partials/minicount.html'" id="titulo" class="mdl-card__title">
+		    
+		  		</div>
+				</div>
+		</div>
+		  
+		  <div class="mdl-card__actions mdl-card--border">
+		  	<h2 class="mdl-card__title-text">{{x.area}}</h2>
+		  </div>
+		</div>
+	</div>
+		
+	</div>
+
 </div>

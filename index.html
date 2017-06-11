@@ -6,83 +6,76 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot">
-	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg">
-	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf">
-	<link rel="stylesheet" href="bower_components/material-design-lite/material.min.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 	<title>Minha Cidade</title>
-</head>
+</head>	
 <body>
-	<nav class="navbar navbar-default">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-      			<a class="navbar-brand" href="#">Logo</a>
+	
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+	  <div class="mdl-layout__drawer">
+	    <span class="mdl-layout-title">Minha cidade</span>
+	    <span class="subtitulo">João Pessoa</span>
+	    <nav class="mdl-navigation">
+	      <a class="mdl-navigation__link" ng-href="#/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Início</a>
+	      
+	       <a class="mdl-navigation__link" ng-href="#/saude"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_hospital</i>Saúde</a>
 
-			</div>
-      			<!-- Collect the nav links, forms, and other content for toggling -->
-		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="#">Saude <span class="sr-only">(current)</span></a></li>
-		        <li><a href="#">Educação</a></li>
-		      </ul>
-		      
-		    </div><!-- /.navbar-collapse -->
-		</div>
-	</nav>
+	      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">book</i>Educação</a>
 
-	<ng-view style="height:100%;">
-		
-	 
-	</ng-view>
+	      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">directions_walk</i>Esporte</a>
+	   
+	       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">error</i>Sobre</a>
+	    </nav>
+	  </div>
+	  <main class="mdl-layout__content">
+	    <div class="page-content">
+	    	
+	    	<div class="mdl-layout" id="gastronometro-geral">
 
+	    		<!-- <div ng-controller="countdownController" class="mdl-layout__content"> -->
+	    			
+	    			
+	    			
+	    		<!-- </div> -->
 
-	<!--<footer>
-		<nav class="nav navbar navbar-inverse navbar-fixed-bottom color-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						
-					</div>
+	    		<ng-view></ng-view>
+				
 
-					<div class="col-md-4">
-						
-					</div>
+	    		</div>
+	    	</div>
+	    </div>
+	  </main>
+	</div>
 
-					<div class="col-md-4">
-						
-					</div>
-				</div>
-			</div>
-		</nav>
-	</footer>-->
+	
+
 </body>
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-route/angular-route.min.js"></script>
 	<script src="node_modules/chart.js/dist/Chart.min.js"></script>
+
 	<script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="bower_components/material-design-lite/material.min.js"></script>
+	<script src="/bower_components/material-design-lite/material.min.js"></script>
 
 	<!-- Angular.js main -->
 	<script type="text/javascript" src="js/angular/main.js"></script>
 	<!-- Angular.js Controllers -->
 	<script type="text/javascript" src="js/angular/controllers/saude.js"></script>
 	<script type="text/javascript" src="js/angular/controllers/grafico.js"></script>
+	<script type="text/javascript" src="js/angular/controllers/countdown.js"></script>
+	<script type="text/javascript" src="js/angular/controllers/minicount.js"></script>
 	  
 	<!-- Angular.js Services -->
 	<script type="text/javascript" src="js/angular/services/saude.js"></script>
 	
 	<!-- Angular.js Directives -->
-	  
+	<script type="text/javascript" src="js/angular/directives/minicount.js"></script>  
 	<!-- Angular.js Filter -->
+	<script type="text/javascript" src="js/angular/filters/corarea.js"></script>
 </html>

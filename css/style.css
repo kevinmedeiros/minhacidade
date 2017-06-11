@@ -3,12 +3,189 @@
  	padding: 0;
  }
 
-
- .color-footer, .navbar-inverse {
- 	background-color: #e7e7e7 !important;
- 	border-color: #e7e7e7 !important;
+ .demo-layout-transparent {
+  	background: url('../assets/demos/transparent.jpg') center / cover;
  }
 
-.full-width {
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+
+
+#center-titulo, .mdl-layout__header {
+	text-align: center;
+	background-color: 
+}
+
+.subtitulo , .mdl-layout-title {
+	font-size: 15px;
+	line-height: 64px;
+    padding-left: 40px;	
+}
+
+.demo-card-wide.mdl-card {
+  width: 40%;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 8px;
+}
+
+.demo-card-wide.mdl-card-gastronometro-geral {
+  width: 100% !important;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 8px;
+}
+
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 120px;
+  background-color: #3b3be1 ;
+}
+
+.educacao > .mdl-card__title {
+  color: #fff;
+  height: 120px;
+  background-color: red;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+#content-geral {
+	margin-left: 10px;
+}
+
+#content-geral, .mdl-card--border {
+	border-bottom: 1px solid rgba(0,0,0,.1)
+}
+
+.count {
+	margin-left: 5px;
+	width: 60px;
+	height: 60px;
+	padding-top: 40px;
+	background-color: #333333;
+	text-align: center;
+	border-radius: 6px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+	float: left;
+}
+
+
+.count-group {
+	margin-top: 15px;
 	width: 100%;
+	position: relative;
+	float: left;
+	text-align: center;
+}
+
+.valor {
+	font-size: 50px;
+	color: white;
+}
+
+.tag {
+	font-size: 60px;
+	color: black;
+
+}
+
+.divisor {
+	width: 30px;
+	height: 130px;
+	float: left;
+	padding-top: 30px;
+}
+
+.mini-count {
+	margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    /* padding-top: 40px; */
+    background-color: #333333;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    float: left;
+}
+
+
+.mini-count-group {
+	margin-top: 10px;
+	width: 100%;
+	position: relative;
+	float: left;
+	text-align: center;
+}
+
+.mini-valor {
+	font-size: 25px;
+	color: white;
+}
+
+.mini-tag {
+	font-size: 25px;
+	color: black;
+
+}
+
+.mini-divisor {
+	/*width: 15px;*/
+	float: left;
+	margin-left: 2px;
+}
+
+.saude {
+	background-color: #f50057 !important;
+}
+
+.educacao {
+	background-color: #039be5 !important;
+}
+
+.esporte {
+	background-color: #43a047 !important;
+}
+
+.icon-card {
+	font-size: 150px !important;
+	color: white !important;
+}
+
+.text-gastronometro {
+	/*font-family: sans-serif !important;
+	font-size: 29px !important;
+	color: white !important;*/
+
+	color: white;
+    font-size: 19px;
+    font-weight: bold;
+    display: block;
+    margin-top: 30px !important;
+
+
+}
+
+.text-gastronometro-top {
+	color: white;
+    font-size: 19px;
+    font-weight: bold;
+    display: block;
+}
+
+.text-gastronometro-bottom {
+	margin-top: 10px;
+	color: white;
+    font-size: 13px;
+    font-weight: bold;
+    display: block;	
 }

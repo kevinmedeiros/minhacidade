@@ -1,13 +1,16 @@
 (function(){
+
 	'use strict';
-	angular
-	  .module('minhacidade')
-	  .controller('saudeController', saudeController);
-		
-	saudeController.$inject = ['$scope', '$http'];
-		
-	function saudeController($scope, $http){
-		var investimentosPossiveis = [];
+
+	  angular
+	    .module('minhacidade')
+	    .controller('saudeController', saudeController);
+
+	  saudeController.$inject = ['$scope'];
+
+	  function saudeController($scope){
+
+	  	var investimentosPossiveis = [];
 		var comoFoiGasto = [];
 		
 		$scope.labels = ["2011", "2012", "2013", "2014", "2015", "2016", "2017"];
@@ -27,5 +30,9 @@
 
 		$scope.investimentosPossiveis = investimentosPossiveis;
 		$scope.comoFoiGasto = comoFoiGasto;
-	}  
+	 }
+	  
 })();
+
+
+

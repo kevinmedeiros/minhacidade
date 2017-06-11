@@ -11,30 +11,48 @@
     .module('minhacidade')
     .service('saudeService', saudeService);
 
-  saudeService.$inject = ['$http', '$q', 'nossaCidadeURL'];
+  saudeService.$inject = ['$http', '$q', 'minhaCidadeIURL'];
 
   /* recommended */
-  function saudeService($http, $q, nossaCidadeURL){
+  function saudeService($http, $q, minhaCidadeIURL){
 
     return ({
-      initAPI : initAPI
+      getGastosSaude : getGastosSaude,
+      getGastometro : getGastometro
     });
 
-    function initAPI(){
+    function getGastosSaude(){
+
+      return $http({
+        method: 'GET',
+        url: minhaCidadeIURL.API_URL + minhaCidadeIURL.AREA + minhaCidadeIURL.SAUDE + "2017",
+      }).then(getGastosSaudeSucess, getGastosSaudeError );
+
+      function getGastosSaudeSucess(response){
+        return response;
+      }
+
+      function getGastosSaudeError(error){
+        console.log('MSG: Error on eventService request - nossaCidadeURLErrorFailed - ERROR: ');
+      }
+
+    }
+
+    function getGastometro(){
 
       var deferred = $q.defer();
 
-      $http.get(nossaCidadeURL.API_URL)
-        .success(initAPISucess)
-        .error(initAPIError);
+      $http.get(minhaCidadeIURL.API_URL + minhaCidadeIURL.AREA + minhaCidadeIURL.GASTOMETRO)
+        .success(getGastometroSucess)
+        .error(getGastometroError);
 
       return deferred.promise;
 
-      function nossaCidadeURLSucess(response){
+      function getGastometroSucess(response){
         deferred.resolve(response);
       }
 
-      function nossaCidadeURLError(error){
+      function getGastometroError(error){
         console.log('MSG: Error on eventService request - nossaCidadeURLErrorFailed - ERROR: ');
       }
 
