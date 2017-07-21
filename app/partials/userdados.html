@@ -1,0 +1,43 @@
+<div class="div-principal" layout-xs="column">
+
+    <div layout="row" layout-xs="column">
+
+        <div class="div-primaria" flex-xs="100" layout-xs="column" align="center">
+            <div>
+                <img class="logo" src="../images/logo.png">
+            </div>
+        </div>
+
+        <div class="div-segundaria" flex>
+            <form name="form">
+                <div align="center" style="margin-top: 50px">
+                    <md-input-container>
+                        <md-select class="select-font" ng-model="ctrl.userState" required aria-label="select estado">
+                            <md-option ng-repeat="state in ctrl.states" ng-value="state.abbrev">
+                                {{state.abbrev}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <div align="center">
+                    <md-input-container>
+                        <md-select class="select-font" ng-model="ctrl.userCity" required aria-label="select cidade">
+                            <md-option ng-repeat="city in ctrl.citys" ng-value="city">
+                                {{city}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <div id="div-button" class="margim-extra" align="center">
+                    <md-button ng-disabled="form.$invalid" aria-label="botao enviar" ng-click="ctrl.sendData()">Selecionar localidade</md-button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,60 @@
+<html ng-app="Minhacidade">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Minha Cidade</title>
+    <link rel="stylesheet" type="text/css" href="styles/app.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
+</head>
+<body>
+    <div layout="column" layout-fill>
+
+        <!-- Include template of header -->
+        <div ng-include src="'partials/header.html'"></div>
+
+        <div layout="column" style="height:100%;" ng-cloak>
+            <section layout="row" flex >
+
+                <!-- Include template of side -->
+                <div ng-include src="'partials/sidnav.html'"></div>
+
+                <md-content flex layout-padding>
+                    <!--<md-button class=" btn-cadastro md-fab md-primary md-hue-2 sideButton" hide-gt-sm ng-click="toggleLeft()">-->
+                        <!--<md-icon class="iconMenu" md-svg-src="images/icons/ic_menu_white_36px.svg" ></md-icon>-->
+                        <!--<md-tooltip>-->
+                            <!--Abrir menu-->
+                        <!--</md-tooltip>-->
+                    <!--</md-button>-->
+                    <div layout="column">
+                        <!-- block content -->
+                        <ui-view></ui-view>
+
+                    </div>
+                </md-content>
+            </section>
+        </div>
+    </div>
+</body>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular-chart/angular-chart.min.js"></script>
+    <!-- Main App-->
+    <script src="app.js"></script>
+    <!--Controllers App-->
+    <script src="angular/controllers/index.controller.js"></script>
+    <script src="angular/controllers/orcamento.controller.js"></script>
+    <script src="angular/controllers/vocesabia.controller.js"></script>
+    <script src="angular/controllers/areas.controller.js"></script>
+    <script src="angular/controllers/sobre.controller.js"></script>
+    <!--Services App-->
+    <script src="angular/services/userService.js"></script>
+</html>
+
+

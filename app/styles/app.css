@@ -1,0 +1,206 @@
+/* app css stylesheet */
+
+@font-face {
+  font-family: 'fonteCity';
+  src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'fonteSelect';
+  src: url("../fonts/OpenSans-Light.ttf");
+}
+body {
+  /*height: 100%;*/
+    background: url("../images/background.jpg") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6969da;
+}
+
+.div-principal, .md-content {
+  position: relative;
+  max-width: 500px;
+  top: 200px;
+  margin: 0 auto;
+  opacity: 0.90;
+  background: white;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.div-primaria, .flex {
+  background: #25252a !important;
+  /*min-height: 300px;*/
+  min-width: 210px !important;
+  border-radius: 4px 0 0 4px !important;
+}
+
+.div-segundaria, .flex {
+  background: #F9F9F9 !important;
+  min-height: 280px;
+  min-width: 300px !important;
+  border-radius: 0 4px 4px 0 !important;
+}
+
+#div-button .md-button{
+  background: #13AB75 !important;
+  color: #F9F9F9 !important;
+  border-radius: 4px;
+  font-family: 'fonteCity';
+  font-weight: bold;
+}
+
+.button-header {
+  background: black !important;
+}
+.margim-extra {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.border-div-principal {
+  border-radius: 20px;
+}
+
+.logo {
+  max-width: 200px;
+  transform: scale(0.8);
+  margin-top: 70px;
+}
+
+.margin_menu {
+  margin-left: -20px;
+  margin-top: 5px;
+}
+
+.menuAling{
+  min-height: 40px;
+  height: 48px;
+  padding: 4px !important;
+}
+
+.menu-footer h3{
+  font-family: 'fonteSelect';
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+
+h1, h3, h5{
+  font-family: 'fonteSelect';
+}
+
+
+@media only screen and (max-width : 599px) {
+
+
+  .div-principal, .md-content {
+    border-radius: 20px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+
+  .div-primaria {
+
+    border-radius: 4px 4px 0 0 !important;
+  }
+
+  .div-segundaria, .flex {
+    /*min-height: 300px;*/
+    background: #F9F9F9;
+    border-radius: 4px 0 4px 4px !important;
+
+
+  }
+}
+
+
+.select-font {
+  font-family: 'fonteSelect';
+}
+
+
+/*Gastometro*/
+
+.wrap-gastometro {
+  width: 100%;
+  height: 200px;
+}
+
+ul {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+li {
+  font-size: 2em;
+  display: inline-block;
+  text-align: center;
+  background-color: black;
+  padding: 10px;
+  color: white;
+}
+
+.toolbar-bar-collor{
+  background: black;
+}
+
+
+.side-bar-size {
+  min-height: 150px;
+  height: 20%;
+}
+
+.sidenavtoolbar {
+  background: url("../images/background.jpg") no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.nome-cidade {
+  margin: auto 0;
+  text-align: center;
+}
+.nome-cidade h1{
+  margin: 0px; !important;
+}
+.nome-cidade h5 {
+  margin: 0px; !important;
+}
+
+
+/*Partial index cards*/
+
+
+.card-header {
+  background: #13AB75;
+}
+
+.icon-card {
+  width: 25%;
+}
+
+.gastometro {
+  width: 75%;
+}
+
+.wrap-cards {
+  max-width: 50%;
+}
+
+.card-geral {
+  max-height: 300px;
+}
+

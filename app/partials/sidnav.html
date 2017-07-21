@@ -1,0 +1,72 @@
+<md-sidenav
+        class="md-sidenav-left sidenav back"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-sm')"
+        md-disable-backdrop
+        md-whiteframe="4"
+        style="height: 100%"
+>
+
+    <md-toolbar class="side-bar-size sidenavtoolbar">
+
+        <div layout="column" flex="100" >
+
+            <div layout="column" layout-align="center" class="nome-cidade" >
+                <h1>João Pessoa</h1>
+                <h5>Paraiba - Brasil</h5>
+            </div>
+
+        </div>
+    </md-toolbar>
+
+    <md-content layout-padding layout="column">
+
+        <md-list-item ui-sref="home" class="margin_menu md-1-line menuAling"  ng-click="null">
+            <img ng-src="images/icons/ic_home_black_24px.svg" class="md-avatar" style="width: 20px;"/>
+            <div class="md-list-item-text menu-footer" layout="column">
+                <h3>Home</h3>
+            </div>
+        </md-list-item>
+
+        <md-list-item ui-sref="orcamento" class="margin_menu md-1-line menuAling">
+            <img ng-src="images/icons/ic_trending_up_black_24px.svg" class="md-avatar" style="width: 20px;"/>
+            <div class="md-list-item-text menu-footer" layout="column">
+                <h3>Orçamento</h3>
+            </div>
+        </md-list-item>
+
+        <md-divider class="divsize" ></md-divider>
+
+        <md-list-item  ui-sref="vocesabia" class="margin_menu md-1-line menuAling">
+            <img ng-src="images/icons/ic_attach_money_black_24px.svg" class="md-avatar" style="width: 20px;" />
+            <div class="md-list-item-text menu-footer" layout="column">
+                <h3>Você sabia?</h3>
+            </div>
+        </md-list-item>
+
+        <md-list-item ui-sref="areas" class="margin_menu md-1-line menuAling">
+            <img ng-src="images/icons/ic_av_timer_black_24px.svg" class="md-avatar" style="width: 20px;"/>
+            <div class="md-list-item-text menu-footer" layout="column">
+                <h3>Áreas</h3>
+            </div>
+        </md-list-item>
+
+        <md-list-item ui-sref="sobre" class="margin_menu md-1-line menuAling">
+            <img ng-src="images/icons/ic_info_outline_black_24px.svg" class="md-avatar" style="width: 20px;"/>
+            <div class="md-list-item-text menu-footer" layout="column">
+                <h3>Sobre</h3>
+            </div>
+        </md-list-item>
+
+        <md-divider class="divsize" ></md-divider>
+
+        <md-list-item href="/" class="margin_menu md-1-line menuAling" ng-click="null">
+            <img ng-src="images/icons/ic_power_settings_new_black_24px.svg  " class="md-avatar" style="width: 20px;"/>
+            <div class="md-list-item-text menu-footer" layout="column">
+                <h3>Sair</h3>
+            </div>
+        </md-list-item>
+
+    </md-content>
+
+</md-sidenav>
