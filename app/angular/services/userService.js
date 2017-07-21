@@ -9,12 +9,17 @@
 
     angular.module("Minhacidade").factory("userService", userService);
 
-    userService.$inject = ['$http', 'minhacidadeURL'];
+    userService.$inject = ['$http', 'minhacidadeURL', '$cookieStore'];
 
-    function userService($http, minhacidadeURL){
+    function userService($http, minhacidadeURL, $cookieStore){
         return ({
             postLocation: postLocation,
-            getLocation: getLocation
+            getLocation: getLocation,
+            getState: getEstado,
+            getCity: getCity,
+            setState: setState,
+            setCity: setCity,
+            logout: logout
         });
 
         function postLocation(config){
@@ -31,6 +36,27 @@
             function postLocationError(error){
                 console.log('MSG: Error on userService request - postLocationFailed - ERROR: ');
             }
+        }
+
+        function getState(){
+            return $cookieStore.get('state');
+        }
+
+        function getCity(){
+            return $cookieStore.get('city');
+        }
+
+        function setState(state){
+            $cookieStore.put('state', state );
+        }
+
+        function setCity(city){
+            $cookieStore.put('city', city);
+        }
+
+        function logout(){
+            $cookieStore.remove('state');
+            $cookieStore.remove('city');
         }
     }
 
