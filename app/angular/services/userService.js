@@ -13,9 +13,7 @@
 
     function userService($http, minhacidadeURL, $cookieStore){
         return ({
-            postLocation: postLocation,
-            getLocation: getLocation,
-            getState: getEstado,
+            getState: getState,
             getCity: getCity,
             setState: setState,
             setCity: setCity,

@@ -50,17 +50,6 @@
                     });
 
             };
-
-            this.userState = '';
-            this.states = ('Estado Paraíba').split(' ').map(function (state) { return { abbrev: state }; });
-
-            this.userCity = '';
-            this.citys = ["Cidade", "João Pessoa"];
-
-            this.sendData = function () {
-                $location.path("/view2");
-            };
-
         }
 })();
 

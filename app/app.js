@@ -6,8 +6,8 @@ angular.module('Minhacidade', [
     'ngMaterial',
     'ngAria',
     'ngCookies'
-]).
-    constant('minhacidadeURL', {
+])
+    .constant('minhacidadeURL', {
     API_URL: 'http://51.15.137.60:8080/api/',
     GASTOMETRO: 'gastometro/',
     AREA: 'area/',
@@ -15,8 +15,9 @@ angular.module('Minhacidade', [
     EDUCACAO: 'educacao/',
     SEGURANCA: 'seguranca/',
     ESPORTE: 'esporte/'}
-)
-.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+    )
+    .run(['$http','$rootScope', 'userService','$state','$location', check])
+    .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
         .state('home', {
             url: '/',
@@ -47,7 +48,39 @@ angular.module('Minhacidade', [
             templateUrl: 'partials/sobre/sobre.html',
             controller: 'sobreController',
             controllerAs: 'ctrl'
+        })
+        .state('dadosuser',{
+            url: '/dadosuser',
+            templateUrl: 'partials/userdados.html',
+            controller: 'userController',
+            controllerAs: 'ctrl'
         });
 
     $urlRouterProvider.otherwise('/');
 });
+
+
+function add_header_api(){
+    // $http.defaults.headers.common['X-Minhacidade-Key'] = 'MINHACIDADE';
+    // $http.defaults.useXDomain = true;
+}
+
+function check($http,$rootScope, userService, $state, $location){
+
+    $rootScope.header = true;
+    $rootScope.sidnav = true;
+    $rootScope.$on('$locationChangeStart', function(evt, next, current) {
+
+            if(!userService.getState() || !userService.getCity()){
+
+                $rootScope.header = false;
+                $rootScope.sidnav = false;
+
+                $location.path('/dadosuser');
+
+            }else{
+                $rootScope.city = userService.getCity();
+                $rootScope.state = userService.getState();
+            }
+    });
+}

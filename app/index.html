@@ -11,15 +11,14 @@
     <div layout="column" layout-fill>
 
         <!-- Include template of header -->
-        <div ng-include src="'partials/header.html'"></div>
+        <div ng-show="header" ng-include src="'partials/header.html'"></div>
 
         <div layout="column" style="height:100%;" ng-cloak>
             <section layout="row" flex >
-
                 <!-- Include template of side -->
-                <div ng-include src="'partials/sidnav.html'"></div>
+                <div ng-show="sidnav" id="sidnav" ng-include src="'partials/sidnav.html'"></div>
 
-                <md-content flex layout-padding>
+                <md-content flex class="fundo" layout-padding>
                     <!--<md-button class=" btn-cadastro md-fab md-primary md-hue-2 sideButton" hide-gt-sm ng-click="toggleLeft()">-->
                         <!--<md-icon class="iconMenu" md-svg-src="images/icons/ic_menu_white_36px.svg" ></md-icon>-->
                         <!--<md-tooltip>-->
@@ -53,6 +52,7 @@
     <script src="angular/controllers/vocesabia.controller.js"></script>
     <script src="angular/controllers/areas.controller.js"></script>
     <script src="angular/controllers/sobre.controller.js"></script>
+    <script src="angular/controllers/user.controller.js"></script>
     <!--Services App-->
     <script src="angular/services/userService.js"></script>
 </html>

@@ -9,20 +9,16 @@
   font-family: 'fonteSelect';
   src: url("../fonts/OpenSans-Light.ttf");
 }
-body {
-  /*height: 100%;*/
-    background: url("../images/background.jpg") no-repeat center center;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
+
+.fundo, .md-content, .flex{
+  background: url("../images/background.jpg") no-repeat center center; !important;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
 }
 
-body::-webkit-scrollbar-thumb {
-  background: #6969da;
-}
-
-.div-principal, .md-content {
+.div-principal, .md-content{
   position: relative;
   max-width: 500px;
   top: 200px;
