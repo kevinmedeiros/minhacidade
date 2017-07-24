@@ -200,3 +200,23 @@ li {
   max-height: 300px;
 }
 
+.header-despesas {
+  background: #13AB75;
+}
+
+.header-despesas h1{
+  color:white;
+  padding: 10px;
+}
+
+.content-orcamento {
+
+}
+
+.card-orcamento {
+
+}
+
+.card-vocesavia {
+
+}

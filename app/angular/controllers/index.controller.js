@@ -4,14 +4,11 @@
     angular.module('Minhacidade')
         .controller('indexController', indexController)
 
-        indexController.$inject = ["$scope","$location",'$timeout', '$mdSidenav', '$log'];
+        indexController.$inject = ["$scope","$location",'$interval', '$mdSidenav', '$log'];
 
 
-        function indexController($scope,$location, $timeout, $mdSidenav, $log) {
-            var vm = this;
-
-            vm.areas = ["Gastro"];
-
+        function indexController($scope,$location, $interval, $mdSidenav, $log) {
+            
             $scope.toggleLeft = buildDelayedToggler('left');
             $scope.isOpenRight = function(){
                 return $mdSidenav('right').isOpen();

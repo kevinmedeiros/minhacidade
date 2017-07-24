@@ -7,13 +7,11 @@
   "private": true,
   "dependencies": {
     "angular": "~1.6.3",
-    "angular-route": "~1.6.0",
     "angular-loader": "~1.5.0",
-    "angular-mocks": "~1.5.0",
-    "html5-boilerplate": "^5.3.0",
     "angular-material":"",
     "angular-chart": "",
     "angular-ui-router":"",
-    "angular-cookies": ""
+    "angular-local-storage": "",
+    "angular-datatables": "~0.5.x"
   }
 }
