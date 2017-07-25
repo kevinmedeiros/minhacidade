@@ -4,9 +4,9 @@
 angular.module('Minhacidade', [
     'ui.router',
     'ngMaterial',
-    'ngAria',
-    'ngCookies'
-])
+    'ngCookies',
+    'md.data.table'
+    ])
     .constant('minhacidadeURL', {
     API_URL: 'http://51.15.137.60:8080/api/',
     GASTOMETRO: 'gastometro/',

@@ -27,11 +27,8 @@
                 $scope.mil = 0;
 
                 $interval(function(){
-                    console.log($scope.centavos.toString().length);
                     if($scope.centavos.toString().length >= 3){
-                        console.log($scope.centavos.toString().length);
                         $scope.centavos = 0;
-                        console.log($scope.centavos);
                         if($scope.mil > 999){
                             $scope.mil = 0;
                         }else{

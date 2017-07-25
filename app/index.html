@@ -6,7 +6,7 @@
     <title>Minha Cidade</title>
     <link rel="stylesheet" type="text/css" href="styles/app.css">
     <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
-    <link rel="stylesheet" type="text/css" href="bower_components/angular-datatables/dist/css/angular-datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-material-data-table/dist/md-data-table.min.css">
 </head>
 <body>
     <div layout="column" layout-fill>
@@ -36,16 +36,25 @@
         </div>
     </div>
 </body>
-    <script src="bower_components/angular/angular.min.js"></script>
+    <!--Angular-->
+    <script src="bower_components/angular/angular.js"></script>
+    <!--Angular ui-->
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <!--Angular cookies-->
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <!--Material Angular-->
     <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
     <script src="bower_components/angular-material/angular-material.min.js"></script>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/angular-chart/angular-chart.min.js"></script>
-    <script src="bower_components/angular-datatables/dist/angular-datatables.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-messages.js"></script>
+    <!--Chart-->
+    <script src="bower_components/chart.js/dist/Chart.js"></script>
+    <script src="bower_components/angular-chart/angular-chart.js"></script>
+    <!--md-data-table-->
+    <script src="bower_components/angular-material-data-table/dist/md-data-table.js"></script>
+    <script src="bower_components/md-data-table/dist/md-data-table-templates.js"></script>
+
+
     <!-- Main App-->
     <script src="app.js"></script>
     <!--Controllers App-->

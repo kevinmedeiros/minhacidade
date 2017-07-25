@@ -6,12 +6,14 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "~1.6.3",
-    "angular-loader": "~1.5.0",
-    "angular-material":"",
+    "angular": "",
+    "angular-messages": "~1.5",
+    "angular-material": "",
     "angular-chart": "",
-    "angular-ui-router":"",
+    "angular-ui-router": "",
+    "md-data-table": "",
     "angular-local-storage": "",
-    "angular-datatables": "~0.5.x"
+    "angular-cookies": "~1.5",
+    "angular-material-data-table": "^0.10.10"
   }
 }
