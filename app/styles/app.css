@@ -131,23 +131,6 @@ h1, h3, h5{
   height: 200px;
 }
 
-ul {
-  display: block;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  text-align: center;
-}
-
-li {
-  font-size: 2em;
-  display: inline-block;
-  text-align: center;
-  background-color: black;
-  padding: 10px;
-  color: white;
-}
-
 .toolbar-bar-collor{
   background: black;
 }
@@ -195,7 +178,9 @@ li {
 .wrap-cards {
   max-width: 50%;
 }
-
+.wrap-cards-vc-sabia {
+  max-width: 40%;
+}
 .card-geral {
   max-height: 300px;
 }
@@ -218,5 +203,13 @@ li {
 }
 
 .card-vocesavia {
+  max-height: 300px;
+}
 
+.card-footer-vc-sabia {
+  background: white;
+}
+
+.card-vocesavia .card-header{
+  background: white;
 }
