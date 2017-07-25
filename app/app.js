@@ -57,7 +57,9 @@ angular.module('Minhacidade', [
         });
 
     $urlRouterProvider.otherwise('/');
-});
+}).config(function($mdThemingProvider) {
+    $mdThemingProvider.disableTheming();
+})
 
 
 function add_header_api(){
