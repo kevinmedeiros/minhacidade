@@ -11,13 +11,19 @@
     <!--</div>-->
 <!--</div>-->
 
+<div style="margin-bottom: 10px;">
+    <canvas id="base" class="chart-pie" chart-data="data"
+            chart-labels="labels" width="400px" height="auto">
+    </canvas>
+</div>
+
+
+
 <md-toolbar class="md-table-toolbar md-default" style="background: #13AB75; color: white;">
     <div class="md-toolbar-tools">
         <span>Despesas  previstas para 2017</span>
     </div>
 </md-toolbar>
-
-<!-- exact table from live demo -->
 
 <div style="box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);">
     <md-table-container style="background: white;">
@@ -30,7 +36,7 @@
                 </th>
                 <th md-column md-numeric md-order-by="calories.value">
                     <img ng-src="images/icons/ic_attach_money_black_24px.svg" class="md-avatar" style="width: 20px;"/>
-                    <span>Valor</span>
+                    <span>Valor(R$)</span>
                 </th>
             </tr>
             </thead>
