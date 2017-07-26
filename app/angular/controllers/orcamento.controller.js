@@ -12,7 +12,8 @@
 
     function orcamentoController($scope) {
 
-        $scope.helloword = "orçamento";
+        $scope.labels = ["Administração", "Saúde", "Segurança", "Tele Sales", "Corporate Sales"];
+        $scope.data = [2000.90, 500, 23900.90, 40, 120];
 
     }
 })();
