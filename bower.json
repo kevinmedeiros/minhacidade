@@ -10,7 +10,7 @@
     "angular-messages": "~1.5",
     "angular-material": "",
     "angular-chart": "",
-    "angular-ui-router": "",
+    "ckls": "^1.5",
     "md-data-table": "",
     "angular-local-storage": "",
     "angular-cookies": "~1.5",

@@ -1,15 +1,18 @@
-<md-card flex-gt-md="40">
-    <md-card-title>
+<div id="wrap" layout="row" layout-wrap>
 
-        <md-card-title-media>
-            <div class="md-media-sm card-media">
-                <img ng-src="images/icons/ic_loop_black_24px.svg">
-            </div>
-        </md-card-title-media>
+    <md-card flex-gt-md="40" ng-repeat="gasto in ctrl.areas">
+        <md-card-title>
 
-        <md-card-title-text>
-            <span class="md-headline">Gastometro Geral</span>
-            <span class="md-subhead">$ 43.783.237,99</span>
-        </md-card-title-text>
-    </md-card-title>
-</md-card>
+            <md-card-title-media>
+                <div class="md-media-sm card-media">
+                    <img seticons type="{{gasto.area}}" area="true" ng-src="images/icons/ic_av_timer_black_24px.svg">
+                </div>
+            </md-card-title-media>
+
+            <md-card-title-text>
+                <span class="md-subhead" style="color:black;">{{gasto.area}}</span>
+                <gastometro></gastometro>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+</div>

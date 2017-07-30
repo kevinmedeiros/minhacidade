@@ -14,10 +14,10 @@
     function userController($scope, $rootScope, $location, userService) {
 
         this.userState = '';
-        this.states = ('Estado Paraíba').split(' ').map(function (state) { return { abbrev: state }; });
+        this.states = ["Paraíba"];
 
         this.userCity = '';
-        this.citys = ["Cidade", "João Pessoa"];
+        this.citys = ["João Pessoa"];
 
         this.sendData = function () {
 

@@ -25,7 +25,9 @@
                 $scope.milhoes = 0;
                 $scope.centavos = 0;
                 $scope.mil = 0;
+                var segundos_ano = 31536000;
 
+                console.log(new Date().getMonth());
                 $interval(function(){
                     if($scope.centavos.toString().length >= 3){
                         $scope.centavos = 0;
@@ -38,11 +40,11 @@
                     }else{
                         $scope.centavos++;
                     }
-                    // if($scope.milhoes.toString().length == 3){
-                    //     $scope.milhoes = 0;
-                    // }else{
-                    //     $scope.milhoes++;
-                    // }
+
+                //    Pega o valor de gasto no ano 100
+                //    31,536,000
+
+
 
                 },1000);
             }

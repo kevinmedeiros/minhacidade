@@ -1,3 +1,4 @@
+
 <div class="div-principal" layout-xs="column">
 
     <div layout="row" layout-xs="column">
@@ -12,9 +13,9 @@
             <form name="form">
                 <div align="center" style="margin-top: 50px">
                     <md-input-container>
-                        <md-select class="select-font" ng-model="ctrl.userState" required aria-label="select estado">
-                            <md-option ng-repeat="state in ctrl.states" ng-value="state.abbrev">
-                                {{state.abbrev}}
+                        <md-select class="select-font" ng-model="ctrl.userState" required aria-label="select estado" placeholder="Estado">
+                            <md-option ng-repeat="state in ctrl.states" ng-value="state" >
+                                {{state}}
                             </md-option>
                         </md-select>
                     </md-input-container>
@@ -22,8 +23,8 @@
 
                 <div align="center">
                     <md-input-container>
-                        <md-select class="select-font" ng-model="ctrl.userCity" required aria-label="select cidade">
-                            <md-option ng-repeat="city in ctrl.citys" ng-value="city">
+                        <md-select class="select-font" ng-model="ctrl.userCity" required aria-label="select cidade" placeholder="Cidade">
+                            <md-option ng-repeat="city in ctrl.citys" ng-value="city" >
                                 {{city}}
                             </md-option>
                         </md-select>
@@ -40,4 +41,6 @@
     </div>
 
 </div>
+
+
 

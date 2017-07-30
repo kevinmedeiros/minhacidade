@@ -1,14 +1,15 @@
-<div id="wrap" layout="row">
-    <div class="wrap-cards">
-        <md-card class="card-geral">
+<div id="wrap" layout="row" layout-wrap>
+    <div class="wrap-cards" ng-repeat="gasto in ctrl.gastometros">
+
+        <md-card class="card-geral"  ng-click="showTabDialog($event,gasto.idArea)">
             <md-card-header layout-xs="column" class="card-header">
                 <div class="icon-card">
-                    <img ng-src="images/icons/ic_loop_white_24px.svg" class="md-avatar"/>
+                    <img seticons type="{{gasto.area}}" ng-src="images/icons/ic_loop_white_24px.svg" class="md-avatar"/>
                 </div>
                 <div class="gastometro">
 
-                    <md-card-header-text layout="column" layout-align="center center">
-                        <span class="md-subhead">Orçamento para 2017</span>
+                    <md-card-header-text id="gastometro-geral" layout="column" layout-align="center center">
+                        <span class="md-subhead">ORÇAMENTO PARA 2017</span>
                         <gastometro></gastometro>
                         <span class="md-subhead">Ultima atualização 01 de janeiro de 2017</span>
                     </md-card-header-text>
@@ -19,36 +20,9 @@
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">Orçamento previsto para 2017</span>
-                    <span class="md-subhead">Acompanhe os gastos nos ultimos anos de sua cidade relacionada a saude</span>
+                    <span class="md-subhead">Acompanhe os gastos nos ultimos anos de sua cidade relacionada a <strong>{{gasto.area}}</strong></span>
                 </md-card-title-text>
             </md-card-title>
         </md-card>
     </div>
-
-    <div class="wrap-cards">
-        <md-card class="card-geral">
-            <md-card-header layout-xs="column" class="card-header">
-                <div class="icon-card">
-                    <img ng-src="images/icons/ic_av_timer_white_24px.svg" class="md-avatar"/>
-                </div>
-                <div class="gastometro">
-
-                    <md-card-header-text layout="column" layout-align="center center">
-                        <span class="md-subhead">Orçamento para 2017</span>
-                        <span class="md-title">R$ 25.000.000,00</span>
-                        <span class="md-subhead">Ultima atualização 01 de janeiro de 2017</span>
-                    </md-card-header-text>
-
-                </div>
-
-            </md-card-header>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">Orçamento previsto para 2017</span>
-                    <span class="md-subhead">Acompanhe os gastos nos ultimos anos de sua cidade relacionada a saude</span>
-                </md-card-title-text>
-            </md-card-title>
-        </md-card>
-    </div>
-
 </div>

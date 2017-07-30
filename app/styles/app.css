@@ -10,21 +10,13 @@
   src: url("../fonts/OpenSans-Light.ttf");
 }
 
-.fundo, .md-content, .flex{
-  background: url("../images/background.jpg") no-repeat center center; !important;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  background-size: 100% 100%;
-}
-
 .div-principal, .md-content{
   position: relative;
   max-width: 500px;
   top: 200px;
   margin: 0 auto;
   opacity: 0.90;
-  background: white;
+  /*background: white;*/
   border-radius: 20px;
   -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -44,6 +36,10 @@
   border-radius: 0 4px 4px 0 !important;
 }
 
+md-ink-bar {
+  background: #13AB75;
+}
+
 #div-button .md-button{
   background: #13AB75 !important;
   color: #F9F9F9 !important;
@@ -52,9 +48,6 @@
   font-weight: bold;
 }
 
-.button-header {
-  background: black !important;
-}
 .margim-extra {
   margin-top: 20px;
   margin-bottom: 15px;
@@ -82,16 +75,17 @@
 }
 
 .menu-footer h3{
-  font-family: 'fonteSelect';
   font-size: 14px !important;
   font-weight: 600 !important;
 }
 
-
-h1, h3, h5{
-  font-family: 'fonteSelect';
+.nome-cidade h1 {
+  color: white;
 }
 
+.nome-cidade span {
+  color: white;
+}
 
 @media only screen and (max-width : 599px) {
 
@@ -142,7 +136,7 @@ h1, h3, h5{
 }
 
 .sidenavtoolbar {
-  background: url("../images/background.jpg") no-repeat center center;
+  background: url("../images/sidnav.jpg") no-repeat center center;
   -webkit-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
   -o-background-size: 100% 100%;
@@ -176,7 +170,7 @@ h1, h3, h5{
 }
 
 .wrap-cards {
-  max-width: 50%;
+  max-width: 40%;
 }
 .wrap-cards-vc-sabia {
   max-width: 40%;
@@ -194,6 +188,10 @@ h1, h3, h5{
   padding: 10px;
 }
 
+
+#gastometro-geral span{
+  color: white;
+}
 .content-orcamento {
 
 }
@@ -202,6 +200,13 @@ h1, h3, h5{
 
 }
 
+.card-azul {
+  background: #00b0ff;
+}
+
+.card-amarelo {
+  background: #FFB300;
+}
 .card-vocesavia {
   max-height: 300px;
 }

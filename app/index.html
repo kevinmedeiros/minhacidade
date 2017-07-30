@@ -15,17 +15,17 @@
         <div ng-show="header" ng-include src="'partials/header.html'"></div>
 
         <div layout="column" style="height:100%;" ng-cloak>
-            <section layout="row" flex >
+            <section ng-controller="sidebarController" layout="row" flex >
                 <!-- Include template of side -->
                 <div ng-show="sidnav" id="sidnav" ng-include src="'partials/sidnav.html'"></div>
 
-                <md-content flex class="fundo" layout-padding>
-                    <!--<md-button class=" btn-cadastro md-fab md-primary md-hue-2 sideButton" hide-gt-sm ng-click="toggleLeft()">-->
-                        <!--<md-icon class="iconMenu" md-svg-src="images/icons/ic_menu_white_36px.svg" ></md-icon>-->
-                        <!--<md-tooltip>-->
-                            <!--Abrir menu-->
-                        <!--</md-tooltip>-->
-                    <!--</md-button>-->
+                <md-content class="fundo" id="content_main" flex layout-padding>
+                    <md-button class=" btn-cadastro md-fab md-primary md-hue-2 sideButton" style="background: #13AB75;" hide-gt-sm ng-click="toggleLeft()">
+                        <md-icon class="iconMenu" md-svg-src="images/icons/ic_dehaze_black_24px.svg" ></md-icon>
+                        <md-tooltip>
+                            Abrir menu
+                        </md-tooltip>
+                    </md-button>
                     <div layout="column">
                         <!-- block content -->
                         <ui-view></ui-view>
@@ -39,7 +39,8 @@
     <!--Angular-->
     <script src="bower_components/angular/angular.js"></script>
     <!--Angular ui-->
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!--<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>-->
+    <script src="angular-ui-router/release/angular-ui-router.js"></script>
     <!--Angular cookies-->
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <!--Material Angular-->
@@ -47,6 +48,8 @@
     <script src="bower_components/angular-aria/angular-aria.min.js"></script>
     <script src="bower_components/angular-material/angular-material.min.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <!--Jquery-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!--Chart-->
     <script src="bower_components/chart.js/dist/Chart.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
@@ -64,10 +67,13 @@
     <script src="angular/controllers/areas.controller.js"></script>
     <script src="angular/controllers/sobre.controller.js"></script>
     <script src="angular/controllers/user.controller.js"></script>
+    <script src="angular/controllers/sidebar.controller.js"></script>
     <!--Services App-->
     <script src="angular/services/userService.js"></script>
+    <script src="angular/services/areasService.js"></script>
     <!--Directives App-->
     <script src="angular/directives/gastometro.directive.js"></script>
+    <script src="angular/directives/seticons.directive.js"></script>
 </html>
 
 

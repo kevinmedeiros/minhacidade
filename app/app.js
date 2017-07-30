@@ -5,10 +5,12 @@ angular.module('Minhacidade', [
     'ui.router',
     'ngMaterial',
     'ngCookies',
-    'md.data.table'
+    'md.data.table',
+    'ngAria',
+    'chart.js'
     ])
     .constant('minhacidadeURL', {
-    API_URL: 'http://51.15.137.60:8080/api/',
+    API_URL: 'http://www.minhacidade.top:8080/api/v1/cidades/',
     GASTOMETRO: 'gastometro/',
     AREA: 'area/',
     SAUDE:'saude/',
@@ -18,54 +20,57 @@ angular.module('Minhacidade', [
     )
     .run(['$http','$rootScope', 'userService','$state','$location', check])
     .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-    $stateProvider
-        .state('home', {
-            url: '/',
-            templateUrl: 'partials/index.html',
-            controller: 'indexController',
-            controllerAs: 'ctrl'
-        })
-        .state('orcamento', {
-            url: '/orcamento',
-            templateUrl: 'partials/orcamento/orcamento.html',
-            controller: 'orcamentoController',
-            controllerAs: 'ctrl'
-        })
-        .state('areas', {
-            url: '/areas',
-            templateUrl: 'partials/areas/areas.html',
-            controller: 'areasController',
-            controllerAs: 'ctrl'
-        })
-        .state('vocesabia', {
-            url: '/vocesabia',
-            templateUrl: 'partials/vocesabia/vocesabia.html',
-            controller: 'vocesabiaController',
-            controllerAs: 'ctrl'
-        })
-        .state('sobre', {
-            url: '/sobre',
-            templateUrl: 'partials/sobre/sobre.html',
-            controller: 'sobreController',
-            controllerAs: 'ctrl'
-        })
-        .state('dadosuser',{
-            url: '/dadosuser',
-            templateUrl: 'partials/userdados.html',
-            controller: 'userController',
-            controllerAs: 'ctrl'
-        });
+        $stateProvider
+            .state('home', {
+                url: '/',
+                controller: 'indexController',
+                controllerAs: 'ctrl',
+                templateUrl: 'partials/index.html'
+            })
+            .state('orcamento', {
+                url: '/orcamento',
+                templateUrl: 'partials/orcamento/orcamento.html',
+                controller: 'orcamentoController',
+                controllerAs: 'ctrl'
+            })
+            .state('areas', {
+                url: '/areas',
+                templateUrl: 'partials/areas/areas.html',
+                controller: 'areasController',
+                controllerAs: 'ctrl'
+            })
+            .state('vocesabia', {
+                url: '/vocesabia',
+                templateUrl: 'partials/vocesabia/vocesabia.html',
+                controller: 'vocesabiaController',
+                controllerAs: 'ctrl'
+            })
+            .state('sobre', {
+                url: '/sobre',
+                templateUrl: 'partials/sobre/sobre.html',
+                controller: 'sobreController',
+                controllerAs: 'ctrl'
+            })
+            .state('dadosuser',{
+                url: '/dadosuser',
+                templateUrl: 'partials/userdados.html',
+                controller: 'userController',
+                controllerAs: 'ctrl'
+            });
 
-    $urlRouterProvider.otherwise('/');
-}).config(function($mdThemingProvider) {
-    $mdThemingProvider.disableTheming();
-})
+            $urlRouterProvider.otherwise('/');
+        })
+        .config(function($mdThemingProvider) {
+            // $mdThemingProvider.disableTheming();
+        })
+        .config(function (ChartJsProvider) {
+            ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
+        })
+//Fonte roboto
+//Cores
 
-
-function add_header_api(){
-    // $http.defaults.headers.common['X-Minhacidade-Key'] = 'MINHACIDADE';
-    // $http.defaults.useXDomain = true;
-}
+// azul - #00b0ff
+// amarelo - #FFB300
 
 function check($http,$rootScope, userService, $state, $location){
 
@@ -79,8 +84,19 @@ function check($http,$rootScope, userService, $state, $location){
                 $rootScope.sidnav = false;
 
                 $location.path('/dadosuser');
+                $('#content_main').attr('style', function(i,s) {
+                    return "background: url('../images/background.jpg') no-repeat center center !important; " +
+                           "-webkit-background-size: 100% 100% !important;" +
+                            "-moz-background-size: 100% 100% !important;" +
+                            "-o-background-size: 100% 100% !important;" +
+                            "background-size: 100% 100% !important;"
+                });
 
             }else{
+                $('#content_main').attr('style', function(i,s) {
+                    return "background: #F9F9F9 !important;"
+                });
+
                 $rootScope.city = userService.getCity();
                 $rootScope.state = userService.getState();
             }

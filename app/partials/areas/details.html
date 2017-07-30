@@ -1,0 +1,122 @@
+<md-dialog flex-gt-md="80" aria-label="Mango (Fruit)">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+            <h2>{{vm.detail[0].area}}</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="Gastos">
+                    <md-content class="md-padding">
+                        <md-card>
+                            <canvas class="chart chart-line" chart-data="data" chart-labels="labels"
+                            chart-options="options"></canvas>
+                        </md-card>
+
+                        <md-card>
+                            <md-card-header layout-xs="column">
+                                <div class="icon-card">
+                                    <img seticons type="{{gasto.area}}" ng-src="images/icons/ic_loop_black_24px.svg" class="md-avatar" style="width: 100px;"/>
+                                </div>
+                                <div class="gastometro" style="margin: auto;">
+
+                                    <md-card-header-text layout="column" layout-align="center center">
+                                        <span class="md-subhead">Gastos com {{vm.detail[0].area}}</span>
+                                        <gastometro></gastometro>
+                                        <span class="md-subhead">Ultima atualização 01 de janeiro de 2017</span>
+                                    </md-card-header-text>
+
+                                </div>
+                            </md-card-header>
+                        </md-card>
+
+                        <md-content layout="column" flex>
+
+                            <md-card>
+
+                                <md-toolbar class="md-table-toolbar md-default" style="background: white; color: black;">
+                                    <div class="md-toolbar-tools">
+                                        <span>Despesas  previstas para 2017</span>
+                                    </div>
+                                </md-toolbar>
+
+                            <md-table-container>
+                                <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                                    <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                                        <tr md-row>
+                                            <th md-column md-order-by="areas.area">
+                                                <img ng-src="images/icons/ic_event_black_24px.svg" class="md-avatar" style="width: 20px;"/>
+                                                <span>Ano</span>
+                                            </th>
+                                                <th md-column md-numeric md-order-by="areas.empenho">
+                                                <img ng-src="images/icons/ic_attach_money_black_24px.svg" class="md-avatar" style="width: 20px;"/>
+                                                <span>Valor(R$)</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody md-body>
+                                        <tr md-row md-auto-select="options.autoSelect" ng-repeat="dessert in areas | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                                            <td md-cell>{{dessert.ano}}</td>
+                                            <td md-cell>{{dessert.empenhado}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </md-table-container>
+
+                            <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{areas.length}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+                            </md-card>
+                        </md-content>
+                    </md-content>
+                </md-tab>
+                <md-tab label="Top 20">
+                    <md-content class="md-padding">
+                        <md-card>
+                            <md-table-container>
+                                <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                                    <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                                    <tr md-row>
+                                        <th md-column>
+                                            <img ng-src="images/icons/ic_event_black_24px.svg" class="md-avatar" style="width: 20px;"/>
+                                            <span>Favorecido</span>
+                                        </th>
+                                        <th md-column md-numeric>
+                                            <img ng-src="images/icons/ic_attach_money_black_24px.svg" class="md-avatar" style="width: 20px;"/>
+                                            <span>Pagante(R$)</span>
+                                        </th>
+                                        <th md-column md-numeric>
+                                            <img ng-src="images/icons/ic_attach_money_black_24px.svg" class="md-avatar" style="width: 20px;"/>
+                                            <span>Valor(R$)</span>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody md-body>
+                                    <tr md-row md-auto-select="options.autoSelect" ng-repeat="dessert in areas[0].topVinte | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                                        <td md-cell>{{dessert.favorecido}}</td>
+                                        <td md-cell>{{dessert.pagante}}</td>
+                                        <td md-cell>{{dessert.valor}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </md-table-container>
+                        </md-card>
+
+                    </md-content>
+                </md-tab>
+                <md-tab label="three">
+                    <md-content class="md-padding">
+                        <!--<h1 class="md-display-2">Tab Three</h1>-->
+                        <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+
+            <md-button ng-click="answer('useful')" class="md-primary">
+            Fechar
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
