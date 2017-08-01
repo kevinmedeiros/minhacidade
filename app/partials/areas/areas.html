@@ -1,6 +1,6 @@
 <div id="wrap" layout="row" layout-wrap>
 
-    <md-card flex-gt-md="40" ng-repeat="gasto in ctrl.areas">
+    <md-card flex-gt-md="40" ng-repeat="gasto in ctrl.areas" ng-click="showTabDialog($event,gasto.idArea)">
         <md-card-title>
 
             <md-card-title-media>
