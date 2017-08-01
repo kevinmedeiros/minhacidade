@@ -11,17 +11,16 @@
         function indexController($scope, areaService, $mdDialog) {
             var vm = this;
 
-            vm.gastometros = [];
+            vm.gastometros = [{area: "Saúde"}, {area: "Educação"}];
 
             $scope.showTabDialog = showTabDialog;
 
-            areaService.getDadosGastometro().then(function(response){
-                console.log(response.data.gastometro);
-                angular.forEach(response.data.gastometro, function(value){
-                    vm.gastometros.push(value);
-                });
-            });
-
+            // areaService.getDadosGastometro().then(function(response){
+            //     console.log(response.data.gastometro);
+            //     angular.forEach(response.data.gastometro, function(value){
+            //         vm.gastometros.push(value);
+            //     });
+            // });
 
             function showTabDialog(ev,id) {
                 console.log(id);
@@ -41,29 +40,18 @@
 
     function detailsController($scope, areaService, $mdDialog,detailID, $timeout) {
         var vm = this;
-        vm.detail;
-        vm.area = "Publicidade";
-        vm.icon = "ic_event_black_24px";
+        vm.detail = ["Saúde"];
+        vm.year = '';
 
-        // $scope.labels = [];
-        // $scope.data = [];
         $scope.labels = [2009, 2010, 2012, 2013];
         $scope.data = [[1000000, 2000000, 4000000, 61000000]];
 
-
-        // datasets: [{
-        //     data: [this.gastos.descricao[0].valor, this.gastos.descricao[1].valor, this.gastos.descricao[2].valor, this.gastos.descricao[3].valor],
-        //     backgroundColor: this.gastos.color,
-        //     borderColor: this.gastos.color,
-        //     fill: false
-        // }]
-
-        $scope.options = {
+        $scope.optionsChart = {
             datasets: [{
                 data: $scope.data,
                 backgroundColor: 'rgb(0, 176, 255)',
                 borderColor: 'rgb(0, 176, 255)',
-                fill: true
+                fill: false
             }],
             legend: {
                 display: false
@@ -86,13 +74,13 @@
 
         $scope.areas = [];
 
-        areaService.getDadosGastometro().then(function(response){
-            angular.forEach(response.data.gastometro, function(value){
-                // $scope.labels.push( value.area);
-                // $scope.data.push((value.empenhado));
-                $scope.areas.push(value);
-            });
-        });
+        // areaService.getDadosGastometro().then(function(response){
+        //     angular.forEach(response.data.gastometro, function(value){
+        //         // $scope.labels.push( value.area);
+        //         // $scope.data.push((value.empenhado));
+        //         $scope.areas.push(value);
+        //     });
+        // });
 
         $scope.selected = [];
         $scope.limitOptions = [5, 10, 15];
@@ -154,7 +142,6 @@
         function showDetail() {
             return areaService.getDadosArea(detailID)
                 .then(function(response) {
-                    console.log(response.data.gastometro);
                     return vm.detail = response.data.gastometro;
                 });
         };

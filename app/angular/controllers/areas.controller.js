@@ -8,12 +8,13 @@
         .controller('areasController', areasController )
         .controller('detailsAreaController', detailsAreaController)
 
-    areasController.$inject = ['$scope','areaService'];
-    detailsAreaController.$inject = ["$scope",'areaService', '$mdDialog', 'detailID'];
+    areasController.$inject = ['$scope','areaService', '$mdDialog'];
+    detailsAreaController.$inject = ['$scope','areaService', '$mdDialog', 'detailID'];
 
-    function areasController($scope, areaService) {
+    function areasController($scope, areaService, $mdDialog) {
         var vm = this;
         vm.areas = [];
+        $scope.showTabDialog = showTabDialog;
 
         areaService.getDadosGastometro().then(function(response){
             console.log(response.data.gastometro);
@@ -28,7 +29,7 @@
             return $mdDialog.show({
                 controller: detailsAreaController,
                 controllerAs: 'vm',
-                templateUrl: 'partials/areas/detailsGasto.html',
+                templateUrl: 'partials/gastometro/detailsGasto.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 locals : {
@@ -42,61 +43,44 @@
     function detailsAreaController($scope, areaService, $mdDialog,detailID){
         var vm = this;
         vm.detail;
-        vm.area = "Publicidade";
-        vm.icon = "ic_event_black_24px";
-
-        $scope.showTabDialog = showTabDialog;
 
         $scope.labels = [];
         $scope.data = [];
 
         $scope.areas = [];
 
-        $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-        $scope.data = [
-            [65, 59, 80, 81, 56, 55, 40],
-            [28, 48, 40, 19, 86, 27, 90]
-        ];
+        $scope.labels = [2009, 2010, 2012, 2013];
+        $scope.data = [1000000, 2000000, 4000000, 61000000];
 
-        // $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
-        $scope.options = {
+        $scope.optionsChart = {
+            backgroundColor: 'rgb(0, 176, 255)',
+            borderColor: 'rgb(0, 176, 255)',
+            fill: false,
             legend: {
                 display: false
             },
+            responsive : true,
             scales: {
                 xAxes: [{
                     gridLines: {
-                        color: "rgba(0, 0, 0, 0)",
-                    },
+                        display: false
+                        // color: "rgba(0, 0, 0, 0)"
+                    }
                 }],
                 yAxes: [{
-                    ticks: {
-                        stepSize : 5000000,
-                        beginAtZero: true
-                        // callback: function(label, index, labels) {
-                        //     if(label==0)
-                        //         return 0+',00';
-                        //     else if(label==1000000)
-                        //         return 1 + " milhão";
-                        //     else
-                        //         return label/1000000+' milhões';
-                        // }
-                    },
-                    scaleLabel: {
-                        // display: true,
-                        // labelString: '1k = 1000'
-                    },
                     gridLines: {
-                        color: "rgba(0, 0, 0, 0)",
+                        // color: "rgba(0, 0, 0, 0)"
+                        display: false
                     }
                 }]
             }
+
         };
 
         areaService.getDadosGastometro().then(function(response){
             angular.forEach(response.data.gastometro, function(value){
-                $scope.labels.push( value.area);
-                $scope.data.push((value.empenhado));
+                // $scope.labels.push( value.area);
+                // $scope.data.push((value.empenhado));
                 $scope.areas.push(value);
             });
         });
