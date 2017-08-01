@@ -102,10 +102,6 @@
                             console.log("nenhuma dos casos");
                     }
                 }
-                // console.log("Elementos");
-                // console.log(iElement);
-                // console.log("atributos");
-                // console.log(iAttrs);
             }
 
         }
