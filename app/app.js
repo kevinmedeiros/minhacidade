@@ -51,6 +51,10 @@ angular.module('Minhacidade', [
                 controller: 'sobreController',
                 controllerAs: 'ctrl'
             })
+            .state('educacional', {
+                url: '/educacional',
+                templateUrl: 'partials/educacional/educacional.html'
+            })
             .state('dadosuser',{
                 url: '/dadosuser',
                 templateUrl: 'partials/userdados.html',
@@ -77,22 +81,30 @@ function check($http,$rootScope, userService, $state, $location){
     $rootScope.header = true;
     $rootScope.sidnav = true;
     $rootScope.$on('$locationChangeStart', function(evt, next, current) {
-
+            console.log(userService.getCity());
+            console.log(userService.getState());
             if(!userService.getState() || !userService.getCity()){
 
                 $rootScope.header = false;
                 $rootScope.sidnav = false;
 
-                $location.path('/dadosuser');
                 $('#content_main').attr('style', function(i,s) {
                     return "background: url('../images/background.jpg') no-repeat center center !important; " +
-                           "-webkit-background-size: 100% 100% !important;" +
-                            "-moz-background-size: 100% 100% !important;" +
-                            "-o-background-size: 100% 100% !important;" +
-                            "background-size: 100% 100% !important;"
+                        "-webkit-background-size: 100% 100% !important;" +
+                        "-moz-background-size: 100% 100% !important;" +
+                        "-o-background-size: 100% 100% !important;" +
+                        "background-size: 100% 100% !important;"
                 });
 
+                $location.path('/dadosuser');
+
+
             }else{
+                var arr = current.split('#');
+                if(arr[1] == "/dadosuser"){
+                    $location.path('/');
+                }
+
                 $('#content_main').attr('style', function(i,s) {
                     return "background: #F9F9F9 !important;"
                 });
