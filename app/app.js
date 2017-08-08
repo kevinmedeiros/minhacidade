@@ -60,6 +60,10 @@ angular.module('Minhacidade', [
                 templateUrl: 'partials/userdados.html',
                 controller: 'userController',
                 controllerAs: 'ctrl'
+            })
+            .state('reclameaqui',{
+                url: '/reclameaqui',
+                templateUrl: 'partials/reclameaqui/reclame-aqui.html'
             });
 
             $urlRouterProvider.otherwise('/');
@@ -70,11 +74,6 @@ angular.module('Minhacidade', [
         .config(function (ChartJsProvider) {
             ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
         })
-//Fonte roboto
-//Cores
-
-// azul - #00b0ff
-// amarelo - #FFB300
 
 function check($http,$rootScope, userService, $state, $location){
 
