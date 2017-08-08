@@ -25,15 +25,16 @@
             link: function($scope, iElement, iAttrs){
 
                 if($scope.area){
+                    console.log($scope.type);
                     switch ($scope.type){
                         case "Geral":
                             iAttrs.ngSrc = "images/icons/ic_av_timer_white_24px.svg";
                             break;
-                        case "Saúde":
+                        case "saúde":
                             iAttrs.ngSrc = "images/icons/ic_enhanced_encryption_black_24px.svg";
                             break;
-                        case "Educação":
-                            iAttrs.ngSrc = "images/icons/ic_enhanced_encryption_black_24px.svg";
+                        case "educação":
+                            iAttrs.ngSrc = "images/icons/ic_book_black_24px.svg";
                             break;
                         case "Segurança":
                             iAttrs.ngSrc = "images/icons/ic_enhanced_encryption_black_24px.svg";
@@ -50,8 +51,8 @@
                         case "Transporte":
                             iAttrs.ngSrc = "images/icons/ic_enhanced_encryption_black_24px.svg";
                             break;
-                        case "Cultura":
-                            iAttrs.ngSrc = "images/icons/ic_enhanced_encryption_black_24px.svg";
+                        case "cultura":
+                            iAttrs.ngSrc = "images/icons/ic_insert_emoticon_black_24px.svg";
                             break;
                         case "Ciência e Tecnologia":
                             iAttrs.ngSrc = "images/icons/ic_enhanced_encryption_black_24px.svg";
@@ -68,11 +69,11 @@
                         case "Geral":
                             iAttrs.ngSrc = "images/icons/ic_av_timer_white_24px.svg";
                             break;
-                        case "Saúde":
+                        case "saúde":
                             iAttrs.ngSrc = "images/icons/ic_enhanced_encryption_white_24px.svg";
                             break;
-                        case "Educação":
-                            iAttrs.ngSrc = "images/icons/ic_enhanced_encryption_white_24px.svg";
+                        case "educação":
+                            iAttrs.ngSrc = "images/icons/ic_book_white_24px.svg";
                             break;
                         case "Segurança":
                             iAttrs.ngSrc = "images/icons/ic_enhanced_encryption_white_24px.svg";
@@ -89,8 +90,8 @@
                         case "Transporte":
                             iAttrs.ngSrc = "images/icons/ic_enhanced_encryption_white_24px.svg";
                             break;
-                        case "Cultura":
-                            iAttrs.ngSrc = "images/icons/ic_enhanced_encryption_white_24px.svg";
+                        case "cultura":
+                            iAttrs.ngSrc = "images/icons/ic_insert_emoticon_white_24px.svg";
                             break;
                         case "Ciência e Tecnologia":
                             iAttrs.ngSrc = "images/icons/ic_enhanced_encryption_white_24px.svg";

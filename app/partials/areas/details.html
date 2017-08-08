@@ -2,73 +2,41 @@
     <form>
         <md-toolbar>
             <div class="md-toolbar-tools">
-            <h2>{{vm.detail[0]}}</h2>
+            <h2>{{vm.detail[0].idArea}}</h2>
             </div>
         </md-toolbar>
         <md-dialog-content>
             <md-tabs md-dynamic-height md-border-bottom>
                 <md-tab label="Gráfico">
                     <md-content class="md-padding">
-                        <md-card>
-                            <canvas class="chart chart-line" chart-data="data" chart-labels="labels"
-                            chart-options="optionsChart" style="padding-top: 10px;"></canvas>
-                        </md-card>
+                        <!--<h2>vm.detail[0].topVinte</h2>-->
+                        <div style="position: relative; float:left; min-width: 50%; min-height: 300px;">
+                            <md-card>
+                                <canvas class="chart chart-line" chart-data="data" chart-labels="labels"
+                                        chart-options="optionsChart" style="padding-top: 10px;"></canvas>
+                            </md-card>
+                        </div>
 
+                        <div layout="column" style="min-width: 50%; height: 300px; margin: auto 0;">
 
+                            <md-card>
+                                <md-card-header layout-xs="column">
+                                    <div class="icon-card">
+                                        <img seticons type="{{gasto.area}}" ng-src="images/icons/ic_loop_black_24px.svg" class="md-avatar" style="width: 100px;"/>
+                                    </div>
+                                    <div class="gastometro" style="margin: auto;">
 
-                        <md-card>
-                            <md-card-header layout-xs="column">
-                                <div class="icon-card">
-                                    <img seticons type="{{gasto.area}}" ng-src="images/icons/ic_loop_black_24px.svg" class="md-avatar" style="width: 100px;"/>
-                                </div>
-                                <div class="gastometro" style="margin: auto;">
+                                        <md-card-header-text layout="column" layout-align="center center">
+                                            <span class="md-subhead">Gastos com {{vm.detail[0].area}}</span>
+                                            <gastometro></gastometro>
+                                            <span class="md-subhead">Ultima atualização 01 de janeiro de 2017</span>
+                                        </md-card-header-text>
 
-                                    <md-card-header-text layout="column" layout-align="center center">
-                                        <span class="md-subhead">Gastos com {{vm.detail[0].area}}</span>
-                                        <gastometro></gastometro>
-                                        <span class="md-subhead">Ultima atualização 01 de janeiro de 2017</span>
-                                    </md-card-header-text>
+                                    </div>
+                                </md-card-header>
+                            </md-card>
+                        </div>
 
-                                </div>
-                            </md-card-header>
-                        </md-card>
-
-                        <!--<md-content layout="column" flex>-->
-
-                            <!--<md-card>-->
-
-                                <!--<md-toolbar class="md-table-toolbar md-default" style="background: white; color: black;">-->
-                                    <!--<div class="md-toolbar-tools">-->
-                                        <!--<span>Despesas  previstas para 2017</span>-->
-                                    <!--</div>-->
-                                <!--</md-toolbar>-->
-
-                            <!--<md-table-container>-->
-                                <!--<table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">-->
-                                    <!--<thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">-->
-                                        <!--<tr md-row>-->
-                                            <!--<th md-column md-order-by="areas.area">-->
-                                                <!--<img ng-src="images/icons/ic_event_black_24px.svg" class="md-avatar" style="width: 20px;"/>-->
-                                                <!--<span>Ano</span>-->
-                                            <!--</th>-->
-                                                <!--<th md-column md-numeric md-order-by="areas.empenho">-->
-                                                <!--<img ng-src="images/icons/ic_attach_money_black_24px.svg" class="md-avatar" style="width: 20px;"/>-->
-                                                <!--<span>Valor(R$)</span>-->
-                                            <!--</th>-->
-                                        <!--</tr>-->
-                                    <!--</thead>-->
-                                    <!--<tbody md-body>-->
-                                        <!--<tr md-row md-auto-select="options.autoSelect" ng-repeat="dessert in areas | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">-->
-                                            <!--<td md-cell>{{dessert.ano}}</td>-->
-                                            <!--<td md-cell>{{dessert.empenhado}}</td>-->
-                                        <!--</tr>-->
-                                    <!--</tbody>-->
-                                <!--</table>-->
-                            <!--</md-table-container>-->
-
-                            <!--<md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{areas.length}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>-->
-                            <!--</md-card>-->
-                        <!--</md-content>-->
                     </md-content>
                 </md-tab>
                 <md-tab label="Top 20">
@@ -81,7 +49,7 @@
                                             <img ng-src="images/icons/ic_event_black_24px.svg" class="md-avatar" style="width: 20px;"/>
                                         </div>
 
-                                        <md-select ng-model="weapon" ng-mode="year" placeholder="Selecione o ano" class="md-no-underline">
+                                        <md-select ng-model="year" placeholder="Selecione o ano" class="md-no-underline">
                                             <md-option value="2017">2017</md-option>
                                             <md-option value="2016">2016</md-option>
                                             <md-option value="2015">2015</md-option>
@@ -112,7 +80,7 @@
                                     </tr>
                                     </thead>
                                     <tbody md-body>
-                                    <tr md-row md-auto-select="options.autoSelect" ng-repeat="dessert in areas[0].topVinte | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                                    <tr md-row md-auto-select="options.autoSelect" ng-repeat="dessert in vm.detail[0].topVinte | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
                                         <td md-cell>{{dessert.favorecido}}</td>
                                         <td md-cell>{{dessert.pagante}}</td>
                                         <td md-cell>{{dessert.valor}}</td>

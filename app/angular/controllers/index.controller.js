@@ -11,16 +11,15 @@
         function indexController($scope, areaService, $mdDialog) {
             var vm = this;
 
-            vm.gastometros = [{area: "Saúde"}, {area: "Educação"}];
+            vm.gastometros = [];
 
             $scope.showTabDialog = showTabDialog;
 
-            // areaService.getDadosGastometro().then(function(response){
-            //     console.log(response.data.gastometro);
-            //     angular.forEach(response.data.gastometro, function(value){
-            //         vm.gastometros.push(value);
-            //     });
-            // });
+            areaService.getDadosGastometro().then(function(response){
+                angular.forEach(response.data.gastometro, function(value){
+                    vm.gastometros.push(value);
+                });
+            });
 
             function showTabDialog(ev,id) {
                 console.log(id);
@@ -40,8 +39,8 @@
 
     function detailsController($scope, areaService, $mdDialog,detailID, $timeout) {
         var vm = this;
-        vm.detail = ["Saúde"];
-        vm.year = '';
+        vm.detail = [];
+        $scope.year = '';
 
         $scope.labels = [2009, 2010, 2012, 2013];
         $scope.data = [[1000000, 2000000, 4000000, 61000000]];
@@ -72,15 +71,17 @@
 
         };
 
+
         $scope.areas = [];
 
-        // areaService.getDadosGastometro().then(function(response){
-        //     angular.forEach(response.data.gastometro, function(value){
-        //         // $scope.labels.push( value.area);
-        //         // $scope.data.push((value.empenhado));
-        //         $scope.areas.push(value);
-        //     });
-        // });
+        areaService.getDadosGastometro().then(function(response){
+            angular.forEach(response.data.gastometro, function(value){
+                // $scope.labels.push( value.area);
+                // $scope.data.push((value.empenhado));
+                // $scope.areas.push(value);
+
+            });
+        });
 
         $scope.selected = [];
         $scope.limitOptions = [5, 10, 15];
@@ -145,6 +146,23 @@
                     return vm.detail = response.data.gastometro;
                 });
         };
+
+        $scope.$watch('year', function() {
+
+            if($scope.year){
+                showDetail().then(function(response){
+
+                    areaService.getYear($scope.year, response[0].idArea)
+                        .then(function (response) {
+                            return vm.detail = response.data.gastometro;
+                        });
+                });
+            }
+
+            // showDetail();
+
+            // areaService.getYear($scope.year, vm.detail[0].idArea)
+        });
 
         function hide() {
             return $mdDialog.hide();

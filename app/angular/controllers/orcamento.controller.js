@@ -12,8 +12,12 @@
 
     function orcamentoController($scope, $mdEditDialog, $q, $timeout, areaService) {
 
+        // $scope.labels = ["Saúde", "Educação", "Administração"];
+        // $scope.data = [22101,1251,2221.11];
+
         $scope.labels = [];
         $scope.data = [];
+
         $scope.optionsChart = {
             legend: {
                 labels: {
@@ -26,10 +30,12 @@
         this.myDate = new Date();
         this.isOpen = false;
 
+        // $scope.areas = [{area: "Saúde", empenhado: 200.12}, {area: "Educação", empenhado: 250.12}, {area: "Administração", empenhado: 15550.124}];
         $scope.areas = [];
 
         areaService.getDadosGastometro().then(function(response){
             angular.forEach(response.data.gastometro, function(value){
+                console.log(value);
                 $scope.labels.push( value.area);
                 $scope.data.push((value.empenhado));
                 $scope.areas.push(value);

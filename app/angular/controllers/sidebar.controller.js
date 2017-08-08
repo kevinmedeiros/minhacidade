@@ -13,7 +13,6 @@
     rightCtrl.$inject = ['$scope', '$timeout', '$mdSidenav', '$log'];
 
     function sidebarController($scope,$timeout, $interval, $mdSidenav, $log) {
-        console.log("controller sidbar iniciado")
         $scope.toggleLeft = buildDelayedToggler('left');
         $scope.toggleRight = buildToggler('right');
         $scope.isOpenRight = function(){

@@ -81,8 +81,7 @@ function check($http,$rootScope, userService, $state, $location){
     $rootScope.header = true;
     $rootScope.sidnav = true;
     $rootScope.$on('$locationChangeStart', function(evt, next, current) {
-            console.log(userService.getCity());
-            console.log(userService.getState());
+
             if(!userService.getState() || !userService.getCity()){
 
                 $rootScope.header = false;

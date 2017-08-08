@@ -9,20 +9,22 @@
         .controller('vocesabiaController', vocesabiaController )
         .controller('detailsVoceSabaController', detailsVoceSabaController)
 
-    vocesabiaController.$inject = ['$scope','areaService'];
+    vocesabiaController.$inject = ['$scope','areaService', '$mdDialog'];
     detailsVoceSabaController.$inject = ['$scope','areaService', '$mdDialog', 'detailID'];
 
-    function vocesabiaController($scope, areaService) {
+    function vocesabiaController($scope, areaService, $mdDialog) {
 
         var vm = this;
         vm.vocesabia = [];
 
-        areaService.getDadosGastometro().then(function(response){
-            console.log(response.data.gastometro);
-            angular.forEach(response.data.gastometro, function(value){
-                vm.vocesabia.push(value);
-            });
-        });
+        $scope.showTabDialog = showTabDialog;
+
+        // areaService.getDadosGastometro().then(function(response){
+        //     console.log(response.data.gastometro);
+        //     angular.forEach(response.data.gastometro, function(value){
+        //         vm.vocesabia.push(value);
+        //     });
+        // });
 
 
         function showTabDialog(ev,id) {
@@ -46,10 +48,8 @@
         var vm = this;
         vm.detail;
 
-        $scope.showTabDialog = showTabDialog;
-
         $scope.labels = [2009, 2010, 2012, 2013];
-        $scope.data = [1000000, 2000000, 4000000, 61000000];
+        $scope.data = [[1000000, 2000000, 4000000, 61000000]];
 
         $scope.options = {
             datasets: [{

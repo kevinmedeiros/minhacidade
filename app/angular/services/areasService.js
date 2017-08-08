@@ -11,7 +11,8 @@
     function areaService($http, minhacidadeURL){
         return ({
             getDadosGastometro: getDadosGastometro,
-            getDadosArea: getDadosArea
+            getDadosArea: getDadosArea,
+            getYear: getYear
         });
 
 
@@ -19,7 +20,7 @@
 
             return $http({
                 method: 'GET',
-                url: minhacidadeURL.API_URL + "joao-pessoa"
+                url: minhacidadeURL.API_URL + "joao-pessoa"+"?ano=2017"
             }).then(getDadosGastometroSucess, getDadosGastometroError );
 
             function getDadosGastometroSucess(response){
@@ -43,6 +44,21 @@
 
             function getDadosAreaError(error){
                 console.log('MSG: Error on areasService request - getDadosAreaFailed - ERROR: ');
+            }
+        }
+
+        function getYear(ano,id){
+            return $http({
+                method: 'GET',
+                url: minhacidadeURL.API_URL + "joao-pessoa"+"?ano="+ano+"&area="+id
+            }).then(getYearSucess, getYearError );
+
+            function getYearSucess(response){
+                return response;
+            }
+
+            function getYearError(error){
+                console.log('MSG: Error on areasService request - getYearFailed - ERROR: ');
             }
         }
 
